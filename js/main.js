@@ -1,4 +1,28 @@
-// Fonctions communes à toutes les pages
+(function () {
+  // ===== À CHANGER : mets ton vrai numéro =====
+  var NUMERO_WHATSAPP = "2290128894743";  // 229 + numéro, sans + ni espaces
+  var NUMERO_APPEL = "+2290128894347";    // avec +
+  var MESSAGE = "Bonjour, je suis intéressé par vos véhicules.";
+  // ============================================
+
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest("a, button");
+    if (!el) return;
+    var texte = (el.textContent || "").toLowerCase();
+
+    if (texte.indexOf("whatsapp") !== -1) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      var m = (el.href || "").match(/[?&]text=([^&]*)/);
+      var msg = m ? m[1] : encodeURIComponent(MESSAGE);
+      window.location.href = "https://wa.me/" + NUMERO_WHATSAPP + "?text=" + msg;
+    } else if (texte.indexOf("appeler") !== -1) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      window.location.href = "tel:" + NUMERO_APPEL;
+    }
+  }, true);
+})();// Fonctions communes à toutes les pages
 (function () {
   const C = window.SITE_CONFIG || {};
   const V = window.VEHICLES || [];
