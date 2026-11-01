@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>À propos</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .apropos{max-width:700px;margin:auto;padding:16px;color:#fff;line-height:1.6}
+    .apropos h1,.apropos h2{color:#d4af37}
+    .boutons{display:grid;gap:12px;margin:20px 0}
+    .boutons a{display:block;text-align:center;padding:14px;border-radius:10px;font-weight:bold;text-decoration:none;font-size:16px}
+    .wa{background:#25D366;color:#000}
+    .tel{background:#d4af37;color:#000}
+    .liste li{margin-bottom:8px}
+  </style>
+</head>
+<body>
+  <p style="padding:16px"><a href="index.html" style="color:#d4af37">← Accueil</a></p>
+
+  <main class="apropos">
+    <h1>À propos de nous</h1>
+    <p>Bienvenue chez <strong>Auto Agence France</strong>. Nous vous aidons à trouver le véhicule qui correspond à vos besoins et à votre budget, avec des conseils honnêtes et un service sérieux.</p>
+
+    <h2>Pourquoi nous choisir ?</h2>
+    <ul class="liste">
+      <li>Des véhicules sélectionnés avec soin</li>
+      <li>Des prix clairs en FCFA</li>
+      <li>Un accompagnement avant et après l'achat</li>
+      <li>Une réponse rapide sur WhatsApp</li>
+    </ul>
+
+    <h2>Contactez-nous</h2>
+    <p>Une question sur un véhicule ? Écrivez-nous ou appelez-nous, nous vous répondons rapidement.</p>
+
+    <div class="boutons">
+      <a id="btn-wa" class="wa" href="#">Écrire sur WhatsApp</a>
+      <a id="btn-tel" class="tel" href="#">Appeler maintenant</a>
+    </div>
+  </main>
+
+  <script>
+    // ===== À CHANGER : mets ton vrai numéro ici =====
+    const WHATSAPP = "2290197000000";   // sans + ni espaces
+    const TELEPHONE = "+2290197000000"; // avec +
+    // ================================================
+
+    const msg = encodeURIComponent("Bonjour, je suis intéressé par vos véhicules.");
+    document.getElementById("btn-wa").href = "https://wa.me/" + WHATSAPP + "?text=" + msg;
+    document.getElementById("btn-tel").href = "tel:" + TELEPHONE;
+  </script>
+</body>
+</html>
