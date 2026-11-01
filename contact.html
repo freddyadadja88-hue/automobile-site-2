@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .contact{max-width:500px;margin:auto;padding:16px;display:grid;gap:12px;color:#fff}
+    .contact input,.contact textarea{padding:12px;border-radius:8px;border:1px solid #444;background:#111;color:#fff;font-size:16px}
+    .contact button{padding:14px;border:0;border-radius:10px;background:#d4af37;font-weight:bold;font-size:16px}
+  </style>
+</head>
+<body>
+  <p style="padding:16px"><a href="index.html" style="color:#d4af37">← Accueil</a></p>
+  <section class="contact">
+    <h1>Contactez-nous</h1>
+    <input id="nom" placeholder="Votre nom">
+    <input id="tel" placeholder="Votre téléphone">
+    <textarea id="msg" rows="5" placeholder="Votre message"></textarea>
+    <button id="envoyer">Envoyer par WhatsApp</button>
+  </section>
+  <script src="js/config.js"></script>
+  <script>
+    const NUMERO = (typeof CONFIG !== "undefined" && CONFIG.whatsapp) || "22997000000";
+    document.getElementById("envoyer").addEventListener("click", () => {
+      const nom = document.getElementById("nom").value.trim();
+      const tel = document.getElementById("tel").value.trim();
+      const msg = document.getElementById("msg").value.trim();
+      if (!nom || !msg) { alert("Remplis ton nom et ton message."); return; }
+      const texte = `Bonjour, je suis ${nom} (${tel}). ${msg}`;
+      window.location.href = "https://wa.me/" + NUMERO + "?text=" + encodeURIComponent(texte);
+    });
+  </script>
+</body>
+</html>
