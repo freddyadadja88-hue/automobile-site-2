@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catalogue</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .filtres{display:grid;gap:10px;padding:16px}
+    .filtres input,.filtres select{padding:12px;border-radius:8px;border:1px solid #444;background:#111;color:#fff;font-size:16px}
+    .grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;padding:16px}
+    .carte{background:#1a1a1a;border-radius:12px;overflow:hidden;color:#fff}
+    .carte img{width:100%;height:170px;object-fit:cover;background:#333}
+    .carte div{padding:12px}
+    .carte .prix{color:#d4af37;font-weight:bold;font-size:18px}
+    .carte a{display:inline-block;margin-top:8px;padding:10px 14px;background:#d4af37;color:#000;border-radius:8px;text-decoration:none;font-weight:bold}
+  </style>
+</head>
+<body>
+  <header style="padding:16px">
+    <a href="index.html" style="color:#d4af37">← Accueil</a>
+    <h1>Catalogue</h1>
+  </header>
+
+  <section class="filtres">
+    <input id="recherche" type="text" placeholder="Rechercher (marque, modèle…)">
+    <select id="tri">
+      <option value="">Trier par</option>
+      <option value="asc">Prix croissant</option>
+      <option value="desc">Prix décroissant</option>
+    </select>
+  </section>
+
+  <p id="compte" style="padding:0 16px"></p>
+  <main id="grille" class="grille"></main>
+
+  <script src="js/config.js"></script>
+  <script src="js/vehicles.js"></script>
+  <script src="js/catalogue.js"></script>
+</body>
+</html>
