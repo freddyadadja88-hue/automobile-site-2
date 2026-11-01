@@ -1,7 +1,7 @@
 (function () {
   // ===== À CHANGER : mets ton vrai numéro =====
-  var NUMERO_WHATSAPP = "2290128894743";  // 229 + numéro, sans + ni espaces
-  var NUMERO_APPEL = "+2290128894347";    // avec +
+  var NUMERO_WHATSAPP = "2290128894743";  // 2290128894743, sans + ni espaces
+  var NUMERO_APPEL = "+2290128894347";    // avec +2290128894743
   var MESSAGE = "Bonjour, je suis intéressé par vos véhicules.";
   // ============================================
 
