@@ -1,0 +1,32 @@
+const liste =
+  typeof vehicles !== "undefined" ? vehicles :
+  typeof vehicules !== "undefined" ? vehicules :
+  typeof VEHICULES !== "undefined" ? VEHICULES : [];
+
+const grille = document.getElementById("grille");
+const champ = document.getElementById("recherche");
+const tri = document.getElementById("tri");
+const compte = document.getElementById("compte");
+
+function afficher() {
+  const texte = champ.value.toLowerCase();
+  let res = liste.filter(v => JSON.stringify(v).toLowerCase().includes(texte));
+
+  if (tri.value === "asc") res.sort((a, b) => a.prix - b.prix);
+  if (tri.value === "desc") res.sort((a, b) => b.prix - a.prix);
+
+  compte.textContent = res.length + " véhicule(s)";
+  grille.innerHTML = res.map(v => `
+    <article class="carte">
+      <img src="${v.image || (v.images && v.images[0]) || ''}" alt="${v.marque || ''}">
+      <div>
+        <h3>${v.marque || ''} ${v.modele || ''} ${v.annee || ''}</h3>
+        <p class="prix">${Number(v.prix).toLocaleString("fr-FR")} FCFA</p>
+        <a href="vehicule.html?id=${v.id}">Voir la fiche</a>
+      </div>
+    </article>`).join("");
+}
+
+champ.addEventListener("input", afficher);
+tri.addEventListener("change", afficher);
+afficher();
