@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vente de véhicules au Bénin</title>
+  <meta name="description" content="Découvrez notre sélection de véhicules d'occasion et récents au Bénin.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">
+      <img class="logo-img" data-config-src="logo" alt="">
+      <span data-config="nomAgence"></span>
+    </a>
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <nav class="nav" id="nav">
+      <a href="index.html" class="active">Accueil</a>
+      <a href="catalogue.html">Catalogue</a>
+      <a href="apropos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="catalogue.html?favoris=1" class="nav-fav">♥ Favoris <span class="fav-count" data-fav-count>0</span></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-content">
+      <p class="eyebrow">Véhicules sélectionnés au Bénin</p>
+      <h1>Trouvez le véhicule <span class="accent">qui vous ressemble</span></h1>
+      <p class="hero-text">Berlines, SUV, pick-up : des véhicules contrôlés, des prix clairs en FCFA et un accompagnement de A à Z.</p>
+
+      <form class="search-bar" action="catalogue.html" method="get">
+        <input type="text" name="q" placeholder="Marque ou modèle (ex : Toyota)">
+        <select name="carburant" aria-label="Carburant">
+          <option value="">Tous carburants</option>
+          <option>Essence</option>
+          <option>Diesel</option>
+          <option>Hybride</option>
+          <option>Électrique</option>
+        </select>
+        <input type="number" name="prixMax" placeholder="Prix max (FCFA)" min="0" inputmode="numeric">
+        <button type="submit" class="btn btn-gold">Rechercher</button>
+      </form>
+
+      <a href="catalogue.html" class="btn btn-outline">Voir tout le catalogue</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Véhicules populaires</h2>
+        <a href="catalogue.html" class="link-more">Tout voir →</a>
+      </div>
+      <div class="grid" id="popularGrid"></div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-head">
+        <h2>Dernières annonces</h2>
+        <a href="catalogue.html" class="link-more">Tout voir →</a>
+      </div>
+      <div class="grid" id="latestGrid"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="center">Pourquoi nous choisir ?</h2>
+      <div class="features">
+        <div class="feature"><span class="icon">✔</span><h3>Véhicules vérifiés</h3><p>Chaque véhicule est contrôlé avant d'être mis en vente.</p></div>
+        <div class="feature"><span class="icon">₣</span><h3>Prix transparents</h3><p>Prix affichés en FCFA, sans surprise.</p></div>
+        <div class="feature"><span class="icon">☎</span><h3>Réponse rapide</h3><p>Contactez-nous par WhatsApp ou par téléphone.</p></div>
+        <div class="feature"><span class="icon">★</span><h3>Accompagnement</h3><p>Conseils et aide dans vos démarches d'achat.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <h2 class="center">Ce que disent nos clients</h2>
+      <p class="center note">Témoignages fictifs, à titre d'exemple. À remplacer par de vrais avis.</p>
+      <div class="testimonials">
+        <blockquote>« Service sérieux et véhicule conforme à la description. »<cite>Client exemple 1 · fictif</cite></blockquote>
+        <blockquote>« Très bon accueil, j'ai trouvé la voiture que je cherchais. »<cite>Client exemple 2 · fictif</cite></blockquote>
+        <blockquote>« Réponses rapides sur WhatsApp, je recommande. »<cite>Client exemple 3 · fictif</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-box">
+      <div>
+        <h2>Une question ? Parlons-en.</h2>
+        <p>📍 <span data-config="adresse"></span></p>
+        <p>🕒 <span data-config="horaires"></span></p>
+        <p>📞 <a data-tel><span data-config="telephone"></span></a></p>
+      </div>
+      <div class="contact-actions">
+        <a class="btn btn-wa" data-wa target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn-outline-dark" data-tel>Appeler</a>
+        <a class="btn btn-outline-dark" href="contact.html">Formulaire de contact</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <strong data-config="nomAgence"></strong>
+      <p data-config="slogan"></p>
+    </div>
+    <div class="footer-links">
+      <a href="catalogue.html">Catalogue</a>
+      <a href="apropos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <p class="copy">© <span data-year></span> <span data-config="nomAgence"></span>. Site de démonstration.</p>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/vehicles.js"></script>
+<script src="js/main.js"></script>
+</body>
+                                                   </html>
